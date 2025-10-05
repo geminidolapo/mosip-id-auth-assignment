@@ -445,7 +445,8 @@ io.mosip.authentication.service/
 ├── model/
 │   └── AuditEvent.java                   # Audit event model
 ├── config/
-│   └── HealthProperties.java             # Health config properties
+│   ├── HealthProperties.java             # Health config properties
+│   └── OpenApiConfig.java                # Open Api configuration
 └── exception/
     └── GlobalExceptionHandler.java       # Centralized error handling
 ```
