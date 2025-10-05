@@ -28,7 +28,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
  */
 @Slf4j
 @RestController
-@RequestMapping("/api/v1/health")
+@RequestMapping("/health")
 @RequiredArgsConstructor
 @Tag(name = "Health Monitoring", description = "Endpoints for service health monitoring")
 public class HealthDetailsController {
@@ -47,7 +47,7 @@ public class HealthDetailsController {
      * @return the response entity with health details
      */
     @PreAuthorize("hasAnyRole('INDIVIDUAL','PARTNER','MISP','RESIDENT')")
-    @GetMapping(value = "/health/details")
+    @GetMapping(value = "/details")
     @Operation(summary = "Get service health details",
             description = "Returns service health status, metadata and configurable properties")
     @ApiResponses(value = {

@@ -31,7 +31,7 @@ import javax.validation.Valid;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping()//has been set in context-path
+@RequestMapping("/audit")//has been set in context-path
 @Tag(name = "audit-controller", description = "Audit Event Logging Controller")
 public class AuditLogController {
 
@@ -44,7 +44,7 @@ public class AuditLogController {
     private final AuditLogService auditLogService;
 
     @PreAuthorize("hasAnyRole('INDIVIDUAL','PARTNER','MISP','RESIDENT','ADMIN')")
-    @PostMapping(value = "/audit/log")
+    @PostMapping(value = "/log")
     @Operation(summary = "Log audit event", description = "Logs an audit event in the system")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Audit event logged successfully",
