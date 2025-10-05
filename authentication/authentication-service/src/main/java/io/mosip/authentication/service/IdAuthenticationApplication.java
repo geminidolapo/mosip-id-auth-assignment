@@ -1,14 +1,15 @@
 package io.mosip.authentication.service;
 
 import io.mosip.authentication.common.service.util.KeyBindedTokenMatcherUtil;
+import io.mosip.authentication.service.config.HealthProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-
 import io.mosip.authentication.common.manager.IdAuthFraudAnalysisEventManager;
 import io.mosip.authentication.common.service.builder.MatchInputBuilder;
 import io.mosip.authentication.common.service.cache.MasterDataCache;
@@ -132,6 +133,7 @@ import io.mosip.kernel.keymanager.hsm.health.HSMHealthCheck;
 				"io.mosip.idrepository.core.config.IdRepoDataSourceConfig.*" }))
 @EnableJpaRepositories(basePackages = { "io.mosip.authentication.common.service.repository.*",
 		"io.mosip.kernel.keymanagerservice.repository.*" })
+@EnableConfigurationProperties(HealthProperties.class)
 public class IdAuthenticationApplication {
 
 	/**
