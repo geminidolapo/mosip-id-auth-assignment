@@ -437,7 +437,6 @@ io.mosip.authentication.service/
 │   └── AuditLogService.java              # Audit persistence logic
 ├── dto/
 │   ├── /request/
-│   │   ├── HealthDetailsRequestDTO.java  # Health request structure
 |   |   └── AuditLogRequestDTO.java       # Audit request with validation
 │   ├── /response/
 │   │   ├── AuditLogResponseDTO.java
